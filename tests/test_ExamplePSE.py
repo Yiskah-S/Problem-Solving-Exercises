@@ -1,5 +1,5 @@
 import pytest
-from ExamplePSE_rock_paper_scissors.ExamplePSE import winner
+from PSEs.ExamplePSE_rock_paper_scissors import winner
 
 def test_rock_beats_scissors():
     # arrange
