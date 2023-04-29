@@ -1,6 +1,6 @@
 {
     "python.testing.pytestArgs": [
-        "ExamplePSE"
+        "ExamplePSE_rock_paper_scissors"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
