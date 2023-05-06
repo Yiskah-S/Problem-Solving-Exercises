@@ -1,4 +1,4 @@
-6list1 = [1, 2, 3, 4]
+list1 = [1, 2, 3, 4]
 list2 = [1, 2, 3]
 
 def merge_lists(list1, list2):
