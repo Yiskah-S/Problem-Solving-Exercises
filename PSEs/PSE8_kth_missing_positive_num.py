@@ -1,6 +1,3 @@
-arr = [2, 3, 4, 7, 11]
-k = 5
-
 # def findKthMissing(arr, k):
 #     if not arr or k <= 0:
 #         raise Exception("Invalid input")

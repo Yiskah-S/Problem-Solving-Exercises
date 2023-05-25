@@ -16,7 +16,6 @@ def get_highest_rated(restaurants):
     if len(highest_rated) == 1:
         return highest_rated[0]
     elif len(highest_rated) > 1:
-        # In case of a tie, return all highest-rated restaurants
         return highest_rated
     else:
         return None

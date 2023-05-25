@@ -1,19 +1,3 @@
-# matrix = [[1,2],[3,4],[5,6],[7,8]]
-# r = 2
-# c = 4
-
-# matrix = [[1,2],[3,4]]
-# r = 2
-# c = 4
-
-# matrix = [[1,2],[3,4]]
-# r = 1
-# c = 4
-
-matrix = [[7, 2, 1], [4, 3, 5], [6, 9, 8]]
-r = 9
-c = 1
-
 def reshape_matrix(matrix, r, c):
     if r * c != len(matrix) * len(matrix[0]):
         return matrix
@@ -37,8 +21,4 @@ def reshape_matrix(matrix, r, c):
         return matrix
 
     return [[one_list.pop(0) for _ in range(c)] for _ in range(r)]
-
-
-result = reshape_matrix(matrix, r, c)
-print(f"{result = }")
 
