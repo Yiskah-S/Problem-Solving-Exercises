@@ -1,20 +1,43 @@
 arr = [2, 3, 4, 7, 11]
 k = 5
 
+# def findKthMissing(arr, k):
+#     if not arr or k <= 0:
+#         raise Exception("Invalid input")
+    
+#     if k < arr[0]:
+#         return k
+
+#     missing_count = 0
+#     num_tracker = 1
+
+#     while missing_count < k:
+#         if num_tracker not in arr:
+#             missing_count += 1
+#         num_tracker += 1
+
+#     return num_tracker - 1
+
+
+
 def kth_missing_positive_number(arr, k):
     if not arr or k < 0:
         raise Exception("Invalid input")
     
     if k < arr[0]:
         return k
+    
+    left, right = 0, len(arr) - 1
 
-    missing_num_counter = 0
-    missing_num_tracker = 0
+    while left <= right:
+        mid = (left + right) // 2
+        missing_count = arr[mid] - mid - 1
 
-    while missing_num_counter != k:
-        missing_num_tracker += 1
-        if missing_num_tracker not in arr:
-            missing_num_counter += 1
+        if missing_count < k:
+            left = mid + 1
+        else:
+            right = mid - 1
 
-    return missing_num_tracker
+    return left + k
+
 
