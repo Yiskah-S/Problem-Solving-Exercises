@@ -392,26 +392,71 @@ else return num counter
 
 ---  
 
-## **PSE 9 - **  
+## **PSE 9 - Tic Tac Toe**  
 
 
 **Problem Statement**  
 
+Imagine working on software that determines the winner of a game of Tic Tac Toe. Create a function named tic_tac_toe_winner that is responsible for determing the state of a Tic Tac Toe board - Either there's no winner, it's a tie, 'X' won, or 'O' won. This function should take in 3x3 matrix as a parameter. Each element is either an 'X', 'O', or empty string ''. This function should have a return value of the winner 'X' or 'O', 'Tie' (for a full board with no winner), or None (for a game that is still in progress).
 
+Example 1: Input:
 
-**
-![Image]()
+[
+    ['X', 'O', 'X'],
+    ['O', 'O', 'X'],
+    ['X', 'X', 'O']
+]
+ Save
+Output: 'Tie'
 
-**
-![Image]()
+Example 2: Input:
+
+[
+    ['X', 'O', 'X'],
+    ['O', 'O', 'X'],
+    ['X', 'O', '']
+]
+ Save
+Output: 'O'
+
+Example 3: Input:
+
+[
+    ['X', 'O', 'O'],
+    ['O', 'X', 'O'],
+    ['', '', 'X']
+]
+ Save
+Output: 'X'
+
+Example 4: Input:
+
+[
+    ['X', '', 'O'],
+    ['O', 'X', 'X'],
+    ['', '', '']
+]
+ Save
+Output: None
 
 **Clarifying questions** 
 
-
+- Can we exit as none as soon as we find a ' '?
+No, because there may be a winner.
+- Can the input every be anything but valid?
+No
 
 **Pseudo Code** 
 
+for each row, check that the first value is not ' ' and all the values are identical, if so return first value
 
+for each column do the same
+
+for each diagonal do the same
+
+if no winner is found, check for ' ', if none are found return tie
+
+return none
 
 ---  
 
