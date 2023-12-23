@@ -478,3 +478,154 @@ return none
 
 
 **Pseudo Code** 
+
+---  
+
+## **PSE 11 - Most Frequent K Elements**  
+
+
+**Problem Statement**  
+
+
+
+**
+![Image]()
+
+**
+![Image]()
+
+**Clarifying questions** 
+
+
+
+**Pseudo Code** 
+
+---  
+
+## **PSE 12 - Linked List Intersection**  
+
+
+**Problem Statement**  
+
+Given the heads of two singly linked-lists head_a and head_b, return the node at which the two lists intersect. If the two linked lists do not intersect, the function should return None.
+
+For example, the following two linked lists begin to intersect at the node 8:
+
+*Example 1:*
+![PSE12-1](images/PSE12-1.png)
+
+The following two linked lists do not intersect at all.
+
+*Example 2:*
+![PSE12-2](images/PSE12-2.png)
+
+For this problem, we want to focus on the nodes themselves and not necessarily the value inside of the node.
+
+For example, while the following linked lists have tails that share the same values, they are not considered to intersect because the nodes of the linked lists are not the same nodes in memory.
+
+*Example 3:*
+![PSE12-3](images/PSE12-3.png)
+
+
+**Clarifying questions** 
+
+ - Do the lists have the same size leading up to the intersection point?
+- Is there a size limit to the lists?
+- What is the return if both lists are empty?
+- What is the return if there is no intersection?
+- Is the length of the lists known?
+  
+
+**Pseudo Code** 
+
+If either list is empty, return None
+
+Create a set to hold the nodes of list_a
+
+Loop over list_a and add each node to the set
+
+Loop over list_b and check if each node is in the set
+
+---  
+
+## **PSE 13 - **  
+
+
+**Problem Statement**  
+
+
+
+**
+![Image]()
+
+**
+![Image]()
+
+**Clarifying questions** 
+
+
+
+**Pseudo Code** 
+
+---  
+
+## **PSE 14 - **  
+
+
+**Problem Statement**  
+
+
+
+**
+![Image]()
+
+**
+![Image]()
+
+**Clarifying questions** 
+
+
+
+**Pseudo Code** 
+
+---  
+
+## **PSE 15 - **  
+
+
+**Problem Statement**  
+
+
+
+**
+![Image]()
+
+**
+![Image]()
+
+**Clarifying questions** 
+
+
+
+**Pseudo Code** 
+
+---  
+
+## **PSE 16 - **  
+
+
+**Problem Statement**  
+
+
+
+**
+![Image]()
+
+**
+![Image]()
+
+**Clarifying questions** 
+
+
+
+**Pseudo Code** 
