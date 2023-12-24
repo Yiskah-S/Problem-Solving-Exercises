@@ -548,24 +548,51 @@ Loop over list_b and check if each node is in the set
 
 ---  
 
-## **PSE 13 - **  
+## **PSE 13 - Array to BST**  
 
 
 **Problem Statement**  
 
+Given a sorted array of integers, arr, write a function to create a balanced Binary Search Tree from the contents of the array. Return the root of the Binary Search Tree.
 
+Example:
 
-**
-![Image]()
+arr = [5, 10, 15, 20, 25, 30, 35, 40, 45]
 
-**
-![Image]()
+should result in a tree with the following root/height:
+
+![Alt text](images/PSE13.png)
+
+Please note the following:
+
+There will not be any duplicate elements in the array
+One is not required to implement a self-balancing Binary Search Tree in order to solve this exercise. For an extra challenge, consider why it is unnecessary!
+
 
 **Clarifying questions** 
 
-
+- What do we return when array is empty?
+- What if the array has only 1 element?
+- Is there a preferred traversal and insertion method?
+- What kind of data is stored in the Tree Nodes?
 
 **Pseudo Code** 
+
+1. Check for base cases:
+   a. If the array is empty (length is 0), return `None` as there are no nodes to create the BST.
+   b. If the array has only one element, create a new BST node with that element and return it.
+
+2. Recursive case:
+   a. Find the middle index of the array. If the length is odd, select the middle element. If the length is even, select one of the two middle elements.
+   b. Create a new BST node with the value at the middle index. 
+
+3. Construct the left and right subtrees:
+   a. Recursively call function with the left subarray and assign the return value to the `left` attribute of the current node.
+   b. Recursively call function with the right subarray and assign the return value to the `right` attribute of the current node.
+
+4. Once the recursion bottoms out, it will backtrack, thereby constructing the entire BST from bottom to top.
+
+5. Return the root node of the constructed BST.
 
 ---  
 
