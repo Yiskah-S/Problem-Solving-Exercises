@@ -596,24 +596,95 @@ One is not required to implement a self-balancing Binary Search Tree in order to
 
 ---  
 
-## **PSE 14 - **  
+## **PSE 14 - Number of Provinces**  
 
 
 **Problem Statement**  
+Create a function num_provinces that takes in an adjacency matrix representing a graph of cities, is_connected. The function should return the total number of provinces represented by is_connected .
+
+is_connected is a graph with N nodes. Each node represents a city. Two cities a and b belong to a single province if there is a possible path from a to b or vice versa.
+
+Paths from a to b through intermediary cities such as a city c are valid paths.
+
+is_connected[i][j] = 1 indicates that cities i and j are directly connected. Otherwise is_connected[i][j] = 0, even if there is an indirect path from i to j.
+
+Return the total number of provinces in is_connected.
+
+Adapted from: https://leetcode.com/problems/number-of-provinces 
+
+*Example 1:*
+![Alt text](images/PSE14-1.png)
+
+Input:
+
+```
+is_connected = [
+    [0, 0, 1],
+    [0, 0, 0],
+    [1, 0, 0]
+]
+```
+
+Output: 2
 
 
+*Example 2:*
+![Alt text](images/PSE14-2.png)
 
-**
-![Image]()
+Input:
 
-**
-![Image]()
+```
+is_connected = [
+    [0, 1, 1],
+    [1, 0, 1],
+    [1, 1, 0]
+]
+```
+
+Output: 1
+
+*Example 3:*
+
+![Alt text](images/PSE14-3.png)
+
+Input:
+
+```
+is_connected = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+]
+```
+
+Output: 3
 
 **Clarifying questions** 
 
-
+- What do we return for an empty graph?
+- If there is only 1 element in the graph, we can return immediately
+- Will graph edges always be undirected?
+- Will there be loops in the graph?
+- What should we do in case of a malformed graph?
+- Do we know the expected size of the graph?
 
 **Pseudo Code** 
+
+1. Check for base cases:
+   a. If the graph is empty (length is 0), return 0 as there are no nodes to create the BST.
+   b. If the graph has elements other then 1 or 0 return False.
+2. Create a set to hold the visited nodes.
+3. Create a variable to hold the number of provinces.
+4. Loop over the graph:
+   a. If the current node has not been visited:
+      i. Increment the number of provinces by 1.
+      ii. Perform a depth-first search on the current node.
+5. Return the number of provinces.
+6. The depth-first search function:
+   a. Add the current node to the visited set.
+   b. Loop over the neighbors of the current node:
+      i. If the neighbor has not been visited, perform a depth-first search on the neighbor.
+
 
 ---  
 
@@ -622,7 +693,44 @@ One is not required to implement a self-balancing Binary Search Tree in order to
 
 **Problem Statement**  
 
+For this exercise, create a function network_delay_time which accepts the following parameters:
 
+A list of travel times, times. Each element of times represents a directed edge times[i] = (uᵢ, vᵢ, wᵢ) where uᵢ is the source node, vᵢ is the target node, and wᵢ is the time it takes for a signal to travel from the source node to the target node
+The total number of nodes in the graph, n
+The node from which a signal is being sent, source
+The nodes in the graph are labeled from 1 to n.
+
+Return the minimum time it takes for all of the nodes in the graph to receive the signal from the source node. If it is not possible for all of the nodes to receive the signal, return -1.
+
+*Example 1*
+![Alt text](image.png)
+
+Input: times = [[2,1,1], [2,3,1], [3,4,1]], source = 2, n = 4
+Output: 2
+Explanation:
+Starting from node 2: it takes 1 unit of time to reach node 1, 1 unit of 
+time to reach node 3, and 2 units of time to reach node 4 (1 unit of time from 
+2 -> 3 and 1 unit of time from 3 -> 4 so 2 units overall). 
+
+Therefore, to reach all of the nodes, it would take a minimum of 2 units of time. 
+
+*Example 2*
+![Alt text](image-1.png)
+
+Input: times =[[2,1,1], [2, 3, 2], [3, 1, 1]], source = 1, n = 3
+Output: -1
+It is not possible to reach any other node from node 1, so the function would 
+return -1 to indicate it is not possible to reach all of the nodes in the graph
+from the given source node.
+
+*Example 3*
+![Alt text](image-2.png)
+
+Input: times =[[2, 3, 2]], source = 2, n = 3
+Output: -1
+It is not possible to reach all of the nodes in the graph due to the graph being 
+disconnected, so the function would return -1 to indicate it is not possible to 
+reach all of the nodes in the graph from the given source node.
 
 **
 ![Image]()
