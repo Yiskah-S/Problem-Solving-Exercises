@@ -671,8 +671,8 @@ Output: 3
 **Pseudo Code** 
 
 1. Check for base cases:
-   a. If the graph is empty (length is 0), return 0 as there are no nodes to create the BST.
-   b. If the graph has elements other then 1 or 0 return False.
+   a. If the graph is empty (length is 0), return 0.
+   b. If the graph has elements other than 1 or 0 return False.
 2. Create a set to hold the visited nodes.
 3. Create a variable to hold the number of provinces.
 4. Loop over the graph:
@@ -688,7 +688,7 @@ Output: 3
 
 ---  
 
-## **PSE 15 - **  
+## **PSE 15 - Network Delay**  
 
 
 **Problem Statement**  
@@ -703,7 +703,8 @@ The nodes in the graph are labeled from 1 to n.
 Return the minimum time it takes for all of the nodes in the graph to receive the signal from the source node. If it is not possible for all of the nodes to receive the signal, return -1.
 
 *Example 1*
-![Alt text](image.png)
+
+![Alt text](/images/PSE15-1.png)
 
 Input: times = [[2,1,1], [2,3,1], [3,4,1]], source = 2, n = 4
 Output: 2
@@ -715,7 +716,7 @@ time to reach node 3, and 2 units of time to reach node 4 (1 unit of time from
 Therefore, to reach all of the nodes, it would take a minimum of 2 units of time. 
 
 *Example 2*
-![Alt text](image-1.png)
+![Alt text](/images/PSE15-2.png)
 
 Input: times =[[2,1,1], [2, 3, 2], [3, 1, 1]], source = 1, n = 3
 Output: -1
@@ -724,7 +725,7 @@ return -1 to indicate it is not possible to reach all of the nodes in the graph
 from the given source node.
 
 *Example 3*
-![Alt text](image-2.png)
+![Alt text](/images/PSE15-3.png)
 
 Input: times =[[2, 3, 2]], source = 2, n = 3
 Output: -1
@@ -732,17 +733,34 @@ It is not possible to reach all of the nodes in the graph due to the graph being
 disconnected, so the function would return -1 to indicate it is not possible to 
 reach all of the nodes in the graph from the given source node.
 
-**
-![Image]()
-
-**
-![Image]()
-
 **Clarifying questions** 
 
+Edge cases:
+- invalid input array/source
+- array with 1 node
+Are the weights all positive numbers or not?
+Can there be multiple edges between the same nodes?
+Is the graph always directed?
 
+**Pseudo Code for Netwok Delay** 
 
-**Pseudo Code** 
+1. Check for edge cases:
+   a. If the graph is empty (length is 0), return -1.
+   b. If the graph has elements other than ints return invalid.
+   c. If the source node is not in the graph, return invalid.
+   d. Check if the graph is directed or not.
+   e. Check if the weights are all positive numbers.
+2. Create a distance array with the length of the number of nodes in the graph
+3. Set the distance of the source node to 0 and the distance of all other nodes to infinity
+4. Create a priority queue and add the source node to it
+5. While the priority queue is not empty:
+   a. Pop the node with the smallest distance from the priority queue
+   b. Loop over the neighbors of the popped node:
+      i. Calculate the distance from the popped node to the neighbor
+      ii. If the distance is less than the current distance of the neighbor, update the distance of the neighbor
+      iii. Add the neighbor to the priority queue
+6. Return the maximum distance in the distance array
+7. If the maximum distance in the distance array is infinity, return -1
 
 ---  
 
